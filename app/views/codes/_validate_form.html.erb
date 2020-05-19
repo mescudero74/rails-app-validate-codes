@@ -1,0 +1,11 @@
+<%= form_with do %>
+  <div class="field">
+    <%= label_tag(:q, "Validar codigo:") %>
+  </div>
+  <div class="field">
+    <%= text_field_tag(:code) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Validar") %>
+  </div>
+<% end %>

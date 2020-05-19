@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration datetime:</strong>
+  <%= @code.registration_datetime %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @code.amount %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @code.email %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @code.code %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @code.status %>
+</p>
+
+<%= link_to 'Edit', edit_code_path(@code) %> |
+<%= link_to 'Back', codes_path %>
