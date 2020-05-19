@@ -17,7 +17,7 @@ class CodesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create code" do
     assert_difference('Code.count') do
-      post codes_url, params: { code: { amount: @code.amount, code: @code.code, email: @code.email, registration_datetime: @code.registration_datetime, status: @code.status } }
+      post codes_url, params: { code: { amount: @code.amount, code: @code.code, email: @code.email, status: @code.status } }
     end
 
     assert_redirected_to code_url(Code.last)
@@ -34,7 +34,7 @@ class CodesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update code" do
-    patch code_url(@code), params: { code: { amount: @code.amount, code: @code.code, email: @code.email, registration_datetime: @code.registration_datetime, status: @code.status } }
+    patch code_url(@code), params: { code: { amount: @code.amount, code: @code.code, email: @code.email, status: @code.status } }
     assert_redirected_to code_url(@code)
   end
 

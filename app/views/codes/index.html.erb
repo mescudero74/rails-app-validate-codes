@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Registration datetime</th>
       <th>Amount</th>
       <th>Email</th>
       <th>Code</th>
@@ -17,7 +16,6 @@
   <tbody>
     <% @codes.each do |code| %>
       <tr>
-        <td><%= code.registration_datetime %></td>
         <td><%= code.amount %></td>
         <td><%= code.email %></td>
         <td><%= code.code %></td>

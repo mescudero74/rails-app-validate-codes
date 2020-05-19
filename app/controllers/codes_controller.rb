@@ -1,5 +1,6 @@
 class CodesController < ApplicationController
   before_action :set_code, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /codes
   # GET /codes.json
@@ -65,8 +66,7 @@ class CodesController < ApplicationController
   def validate; end
 
   def validate_code
-    byebug
-    if Code.find_by(code: params[:code])
+    if Code.find_by(code: params[:code]).status == "creado"
       respond_to do |format|
         format.html { redirect_to validate_url, notice: 'El codigo es valido.' }
         format.json { head :no_content }
@@ -92,8 +92,8 @@ class CodesController < ApplicationController
   end
 
   def complete_code_attr(code)
-    @code.registration_datetime = Time.now.iso8601
     @code.status = 'creado'
-    @code.code = Base64.encode64("#{code.email}#{code.amount}#{code.registration_datetime}")
+    @code.code = SecureRandom.hex(7)
+    @code.username = current_user.username
   end
 end

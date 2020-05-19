@@ -17,7 +17,6 @@ class CodesTest < ApplicationSystemTestCase
     fill_in "Amount", with: @code.amount
     fill_in "Code", with: @code.code
     fill_in "Email", with: @code.email
-    fill_in "Registration datetime", with: @code.registration_datetime
     fill_in "Status", with: @code.status
     click_on "Create Code"
 
@@ -32,7 +31,6 @@ class CodesTest < ApplicationSystemTestCase
     fill_in "Amount", with: @code.amount
     fill_in "Code", with: @code.code
     fill_in "Email", with: @code.email
-    fill_in "Registration datetime", with: @code.registration_datetime
     fill_in "Status", with: @code.status
     click_on "Update Code"
 
