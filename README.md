@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Primero buildea la imagen
+`docker-compose build`
+Despues levanta la imagen
+`docker-compose up`
+Luego creas la base de datos desde rails
+`docker-compose run web bundle exec rails db:create`
+Corres las migraciones
+`docker-compose run web bundle exec rails db:migrate`
 
-Things you may want to cover:
+## ESTO ES SOLO PARA CARGAR LOS CODIGOS PROMOCIONALES EN LA BASE DE DATOS
+`docker-compose run web bundle exec rails db:seed`
 
-* Ruby version
+Para crear un usuario ingresas en la consola de rails con 
+`docker-compose run web bundle exec rails c`
 
-* System dependencies
+Luego creas el usuario con
 
-* Configuration
+`User.create(email: "el email", password: "la password, username: "el username", name: "el nombre", last_name: "el apellido", branch: "la sucursal")`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Luego para ingresar al sistema ingresas con username y la contraseña
