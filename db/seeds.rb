@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+    num = File.read('codigos.txt').split.size
+    file = File.read('codigos.txt').split
+
+    file.each do |i|
+      Code.create(email: "martinescudeo@gmail.com", amount: 1, code: i, status: "creado", username: "martinescudero")
+    end

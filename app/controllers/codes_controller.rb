@@ -66,14 +66,21 @@ class CodesController < ApplicationController
   def validate; end
 
   def validate_code
-    if Code.find_by(code: params[:code]).status == "creado"
-      respond_to do |format|
-        format.html { redirect_to validate_url, notice: 'El codigo es valido.' }
-        format.json { head :no_content }
+    if Code.find_by(code: params[:code]) != nil
+      if Code.find_by(code: params[:code]).status == "creado"
+        respond_to do |format|
+          format.html { redirect_to validate_url, notice: 'El codigo es valido.' }
+          format.json { head :no_content }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to validate_url, alert: 'El codigo es invalido.' }
+          format.json { head :no_content }
+        end
       end
     else
       respond_to do |format|
-        format.html { redirect_to validate_url, alert: 'El codigo es invalido.' }
+        format.html { redirect_to validate_url, alert: 'El codigo no existe.' }
         format.json { head :no_content }
       end
     end
