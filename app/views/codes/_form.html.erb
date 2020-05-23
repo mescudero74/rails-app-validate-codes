@@ -1,3 +1,4 @@
+<div class="mx-auto" style="width: 200px;">
 <%= form_with(model: code, local: true) do |form| %>
   <% if code.errors.any? %>
     <div id="error_explanation">
@@ -10,18 +11,23 @@
       </ul>
     </div>
   <% end %>
+<div class="field">
+      <div class="col-md-12 mb-12 lead">
+        <%= form.label :email%>
+        <%= form.text_field :email, class: "form-control", id: "validationDefault01"%>
+      </div>
+      <div class="col-md-12 mb-12 lead">
+    <%= form.label :precio %>
+    <%= form.number_field :amount, class: "form-control", id: "validationDefault02"%>
+    </div>
+    <br>
+    <div class="actions col-md-12 mb-12">
+      <%= form.submit value:"Crear", class: "btn btn-primary" %>
+<%= link_to codes_path class: "text-decoration-none text-reset" do%>
+  <button type="button" class="btn btn-primary">Volver</button>
+<%end%>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit value:"Crear" %>
-  </div>
+</div>
 <% end %>
+</div>

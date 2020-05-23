@@ -1,3 +1,4 @@
+<div class="mx-auto" style="width: 200px;">
 <%= form_with(model: code, local: true) do |form| %>
   <% if code.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +12,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :status %>
+  <div class="field lead">
+    <%= form.label :Estado %>
 <%= select_tag(:status, raw('<option value="usado">Usado</option><option value="cancelado">Cancelado</option><option value="invalido">Invalido</option>')) %>  </div>
 
-  <div class="actions">
-    <%= form.submit value:"Actualizar" %>
+  <div class="actions lead">
+    <%= form.submit value:"Actualizar", class: "btn btn-primary" %>
   </div>
 <% end %>
+<%= link_to @code, class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Ver</button><%end%>
+<%= link_to codes_path, class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Regresar</button><%end%>
+</div>

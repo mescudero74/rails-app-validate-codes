@@ -1,3 +1,4 @@
+<div class="mx-auto lead" style="width: 200px;">
 <%= form_with do %>
   <div class="field">
     <%= label_tag(:q, "Validar codigo:") %>
@@ -6,6 +7,9 @@
     <%= text_field_tag(:code) %>
   </div>
   <div class="actions">
-    <%= submit_tag("Validar") %>
+    <%= submit_tag "Validar", class: "btn btn-primary" %>
+<%= link_to codes_path, class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Regresar</button><%end%>
   </div>
 <% end %>
+</div>

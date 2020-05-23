@@ -1,24 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @code.amount %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @code.email %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @code.code %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @code.status %>
-</p>
-
-<%= link_to 'Edit', edit_code_path(@code) %> |
-<%= link_to 'Back', codes_path %>
+<div class="card" style="width: 30rem;">
+  <ul class="list-group list-group-flush lead">
+    <li class="list-group-item"><strong>Monto:</strong>
+      <%= @code.amount %></li>
+    <li class="list-group-item"><strong>Email:</strong>
+      <%= @code.email %>
+    </li>
+    <li class="list-group-item"><strong>Code:</strong>
+      <%= @code.code %>
+    </li>
+    <li class="list-group-item"><strong>Status:</strong>
+      <%= @code.status %>
+    </li>
+  </ul>
+</div>
+<%= link_to edit_code_path(@code), class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Editar</button><%end%>
+<%= link_to codes_path, class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Regresar</button><%end%>

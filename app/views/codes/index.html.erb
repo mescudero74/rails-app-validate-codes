@@ -1,32 +1,37 @@
 <p id="notice"><%= notice %></p>
+<%= link_to new_code_path, class: "text-decoration-none text-reset" do %>
+<button type="button" class="btn btn-primary">Crear codigo</button><%end%>
+<%= link_to validate_path, class: "text-decoration-none text-reset" do%>
+<button type="button" class="btn btn-primary">Validar codigo</button><%end%>
 
-<h1>Codes</h1>
-
-<%= link_to 'Crear Codigo', new_code_path %>
-<%= link_to 'Validar', validate_path %>
-
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Amount</th>
-      <th>Email</th>
-      <th>Code</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th scope="col" class="lead text-center">Monto</th>
+      <th scope="col" class="lead text-center">Email</th>
+      <th scope="col" class="lead text-center">Codigo</th>
+      <th scope="col" class="lead text-center">Estado</th>
+      <th scope="col" colspan="3" class="lead text-center">Acciones</th>
     </tr>
   </thead>
 
   <tbody>
     <% @codes.each do |code| %>
       <tr>
-        <td><%= code.amount %></td>
-        <td><%= code.email %></td>
-        <td><%= code.code %></td>
-        <td><%= code.status %></td>
-        <td><%= link_to 'Show', code %></td>
-        <td><%= link_to 'Edit', edit_code_path(code) %></td>
-        <td><%= link_to 'Destroy', code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="lead"><%= code.amount %></td>
+        <td class="lead"><%= code.email %></td>
+        <td class="lead"><%= code.code %></td>
+        <td class="text-capitalize lead"><%= code.status %></td>
+        <td><%= link_to code, class: "text-decoration-none text-reset" do%>
+        <button type="button" class="btn btn-primary">Ver</button>
+            <%end%></td>
+        <td><%= link_to edit_code_path(code), class: "text-decoration-none text-reset" do%>
+            <button type="button" class="btn btn-primary">Editar</button>
+            <%end%></td>
+        <td><%= link_to code, method: :delete, data: { confirm: 'Estas seguro que deseas eliminar este codigo?' }, class: "text-decoration-none text-reset" do%><button type="button" class="btn btn-danger">Eliminar</button><%end%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @posts %>
+

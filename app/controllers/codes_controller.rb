@@ -5,7 +5,7 @@ class CodesController < ApplicationController
   # GET /codes
   # GET /codes.json
   def index
-    @codes = Code.all
+    @codes = Code.paginate(page: params[:page], per_page: 20)
   end
 
   # GET /codes/1
