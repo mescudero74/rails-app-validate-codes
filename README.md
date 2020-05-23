@@ -8,6 +8,10 @@ Luego creas la base de datos desde rails, abres otra consola y corres
 ```docker-compose run web bundle exec rails db:create```
 Corres las migraciones
 ```docker-compose run web bundle exec rails db:migrate```
+Corres el webpack
+```
+docker-compose run web bundle exec rails webpacker:install
+```
 
 Para crear un usuario ingresas en la consola de rails con 
 ```docker-compose run web bundle exec rails c```
