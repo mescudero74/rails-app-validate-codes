@@ -33,5 +33,6 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @posts %>
-
+<div class="lead text-decoration-none text-reset">
+<%= will_paginate @posts, :page_links => false, class: "text-decoration-none text-reset" %>
+</div>
